@@ -134,7 +134,7 @@ class _SettingpageState extends State<Settingpage> {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                   child: const Text(
-                    "Safffve",
+                    "Save",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
