@@ -114,7 +114,7 @@ class _FoodReminderPageState extends State<FoodReminderPage> {
                   filled: true,
                   fillColor: Color.fromARGB(255, 65, 63, 63),
                 ),
-                dropdownColor: const Color.fromARGB(255, 0, 0, 0),
+                dropdownColor: const Color.fromARGB(255, 65, 63, 63),
               ),
               const SizedBox(height: 16),
 
@@ -183,20 +183,27 @@ class _FoodReminderPageState extends State<FoodReminderPage> {
                 onTap: () {
                   setState(() {
                     uploadedImage =
-                        'assets/Mike_Wazowski.png'; // Example path to image
+                        'assets/chinjang.png'; // Example path to image
                   });
                 },
-                child: Container(
-                  height: 100,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.grey[800],
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.grey[800],
+                    ),
+                    child:
+                        uploadedImage.isEmpty
+                            ? const Center(child: Text('Upload images'))
+                            : Image.asset(
+                              uploadedImage,
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                            ),
                   ),
-                  child:
-                      uploadedImage.isEmpty
-                          ? const Center(child: Text('Upload images'))
-                          : Image.asset(uploadedImage, fit: BoxFit.cover),
                 ),
               ),
               const SizedBox(height: 16),
