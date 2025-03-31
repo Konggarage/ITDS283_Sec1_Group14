@@ -114,6 +114,7 @@ class _FoodReminderPageState extends State<FoodReminderPage> {
                   filled: true,
                   fillColor: Color.fromARGB(255, 65, 63, 63),
                 ),
+                dropdownColor: const Color.fromARGB(255, 0, 0, 0),
               ),
               const SizedBox(height: 16),
 
