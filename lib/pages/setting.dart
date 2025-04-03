@@ -42,7 +42,7 @@ class _SettingpageState extends State<Settingpage> {
                 const Text(
                   'This action is irreversible, and all your data will be permanently lost.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.grey),เระ
+                  style: TextStyle(color: Colors.grey),
                 ),
                 const SizedBox(height: 20),
                 Row(
