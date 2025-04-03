@@ -13,7 +13,7 @@ class _SettingpageState extends State<Settingpage> {
   final TextEditingController phoneController = TextEditingController();
   int phoneNumber = 0;
 
-void handleSave() {
+  void handleSave() {
     setState(() {
       // แปลงค่า text ใน phoneController เป็น int และเก็บใน phoneNumber
       phoneNumber = int.tryParse(phoneController.text) ?? 0;
@@ -42,7 +42,7 @@ void handleSave() {
                 const Text(
                   'This action is irreversible, and all your data will be permanently lost.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Colors.grey),เระ
                 ),
                 const SizedBox(height: 20),
                 Row(
@@ -142,8 +142,6 @@ void handleSave() {
                 const SizedBox(width: 10),
                 ElevatedButton(
                   onPressed: () {
-                    handleSave();
-                  },
                     handleSave();
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red),

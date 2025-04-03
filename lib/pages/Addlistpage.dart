@@ -26,31 +26,25 @@ class _FoodReminderPageState extends State<FoodReminderPage> {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        // ปรับปุ่ม Cancel ให้อยู่ซ้าย
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              TextButton(
-                onPressed: () {
-                  reminderController.clear();
-                  setState(() {
-                    selectedCategory = 'Vegetables';
-                    selectedDate = '2025-03-30';
-                    selectedTime = '10:00 AM';
-                    uploadedImage = '';
-                  });
-                },
-                child: const Text(
-                  'Cancel',
-                  style: TextStyle(color: Colors.red, fontSize: 18),
-                ),
-              ),
-            ],
+        // ปรับปุ่ม Cancel ให้อยู่ซ้ายสุด
+        leading: Align(
+          alignment: Alignment.centerLeft, // จัดตำแหน่งปุ่ม Cancel ไปทางซ้าย
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16.0), // ระยะห่างจากซ้าย
+            child: TextButton(
+              onPressed: () {
+                reminderController.clear();
+                setState(() {
+                  selectedCategory = 'Vegetables';
+                  selectedDate = '2025-03-30';
+                  selectedTime = '10:00 AM';
+                  uploadedImage = '';
+                });
+              },
+              child: const Text('Cancel', style: TextStyle(color: Colors.red)),
+            ),
           ),
         ),
-        // ปรับปุ่ม Done ให้อยู่ขวา
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
@@ -167,7 +161,6 @@ class _FoodReminderPageState extends State<FoodReminderPage> {
                     });
                   }
                 },
-                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   labelText: 'Time',
                   labelStyle: const TextStyle(color: Colors.white),
@@ -175,6 +168,7 @@ class _FoodReminderPageState extends State<FoodReminderPage> {
                   fillColor: Colors.grey[800],
                   hintText: selectedTime,
                 ),
+                style: TextStyle(color: Colors.white),
               ),
               const SizedBox(height: 16),
 
