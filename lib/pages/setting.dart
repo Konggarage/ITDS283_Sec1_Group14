@@ -11,6 +11,15 @@ class _SettingpageState extends State<Settingpage> {
   bool isReminderOn = true;
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
+  int phoneNumber = 0;
+
+void handleSave() {
+    setState(() {
+      // แปลงค่า text ใน phoneController เป็น int และเก็บใน phoneNumber
+      phoneNumber = int.tryParse(phoneController.text) ?? 0;
+    });
+    print('Phone Number: $phoneNumber'); // จะได้ค่า phoneNumber เป็น int
+  }
 
   void _showDeleteConfirmation() {
     showDialog(
@@ -113,6 +122,7 @@ class _SettingpageState extends State<Settingpage> {
                   child: TextField(
                     controller: phoneController,
                     style: const TextStyle(color: Colors.white),
+                    keyboardType: TextInputType.number, // ป้อนแค่ตัวเลข
                     decoration: InputDecoration(
                       hintText: '+66 xx-xxx-xxxx', // ✅ placeholder สีเทา
                       hintStyle: const TextStyle(
@@ -131,7 +141,11 @@ class _SettingpageState extends State<Settingpage> {
                 ),
                 const SizedBox(width: 10),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    handleSave();
+                  },
+                    handleSave();
+                  },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                   child: const Text(
                     "Save",
